@@ -14,10 +14,14 @@ class ItemList extends _$ItemList {
   }
 
   void deleteItem(String item) {
-    // collection for-loop
     state = [
       for (final t in state)
         if (t != item) t
     ];
   }
+}
+
+@Riverpod(dependencies: [])
+String currentItem(CurrentItemRef ref) {
+  throw UnimplementedError();
 }
