@@ -12,8 +12,12 @@ class ShowItems extends ConsumerWidget {
 
     return ListView(
       children: [
+        // collection for-loop
         for (final item in items)
           ProviderScope(
+            // 각 child widget에만 유효한 item이라는 value를 return하는 Provider가 있다면,
+            // 우리는 그 item값을 EachItem widget에 넘기지 않고도 EachItem widget에서 엑세스할 수가 있습니다.
+            // override할 Provider를 리스트업하겠습니다.
             overrides: [currentItemProvider.overrideWithValue(item)],
             child: const EachItem(),
           )

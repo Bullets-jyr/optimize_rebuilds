@@ -10,6 +10,7 @@ class ItemList extends _$ItemList {
   }
 
   void addItem(String item) {
+    // spread operator
     state = [...state, item];
   }
 
@@ -23,5 +24,6 @@ class ItemList extends _$ItemList {
 
 @Riverpod(dependencies: [])
 String currentItem(CurrentItemRef ref) {
+  // Provider는 lazy 로딩이기 때문에 바로 에러를 throw하지 않습니다.
   throw UnimplementedError();
 }
